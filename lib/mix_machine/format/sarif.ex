@@ -104,5 +104,6 @@ defmodule MixMachine.Format.Sarif do
 
   defp normalize(nil), do: {1, 1, 1, 1}
   defp normalize(line) when is_integer(line), do: {line, 1, line, 1}
+  defp normalize({line, col}), do: {line, col, line, col}
   defp normalize(tuple), do: tuple
 end
